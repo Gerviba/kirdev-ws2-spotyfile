@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotyfile</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://i.icomoon.io">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Spoty<span>file</span></h1>
+    <h6 th:text="${motd}">Motd</h6>
+    <div class="search">
+        <form action="#" method="get">
+            <input th:value="${query}" type="text" name="query" autocomplete="off"/>
+            <input type="submit" value="Keresés"/>
+        </form>
+        <a href="#">Legújabbak</a>
+        <a href="#">Legkedveltebbek</a>
+        <a href="#">Egyéb</a>
+    </div>
+
+    <div class="results">
+        <div class="music" th:each="track : ${results}">
+            <a href="#" th:href="|track/${track.id}|">
+                <div class="image"
+                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"
+                     th:style="|background-image: url('${track.cover}')|"></div>
+                <h3><b th:text="${track.artists}">Author</b> <span th:text="|- ${track.name}|"> - Song Name</span></h3>
+            </a>
+            <span class="material-icons">album</span>
+            <ins th:text="|Popularity: ${track.popularity}|">Popularity</ins>
+            <br>
+            <span class="material-icons">equalizer</span>
+            <ins th:text="|${track.tempo}bpm|">Tempo</ins>
+            <br>
+            <span class="material-icons">today</span>
+            <ins th:text="|${track.year}|">Year</ins>
+        </div>
+        <div class="music">
+            <a href="#">
+                <div class="image"
+                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"></div>
+                <h3>Author <span> - Song Name</span></h3>
+            </a>
+            <span class="material-icons">album</span>
+            <ins>Duration</ins>
+            <br>
+            <span class="material-icons">equalizer</span>
+            <ins>Tempo</ins>
+            <br>
+            <span class="material-icons">today</span>
+            <ins>Year</ins>
+        </div>
+        <div class="music">
+            <a href="#">
+                <div class="image"
+                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"></div>
+                <h3>Author <span> - Song Name</span></h3>
+            </a>
+            <span class="material-icons">album</span>
+            <ins>Duration</ins>
+            <br>
+            <span class="material-icons">equalizer</span>
+            <ins>Tempo</ins>
+            <br>
+            <span class="material-icons">today</span>
+            <ins>Year</ins>
+        </div>
+        <div class="music">
+            <a href="#">
+                <div class="image"
+                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"></div>
+                <h3>Author <span> - Song Name</span></h3>
+            </a>
+            <span class="material-icons">album</span>
+            <ins>Duration</ins>
+            <br>
+            <span class="material-icons">equalizer</span>
+            <ins>Tempo</ins>
+            <br>
+            <span class="material-icons">today</span>
+            <ins>Year</ins>
+        </div>
+        <div class="music">
+            <a href="#">
+                <div class="image"
+                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"></div>
+                <h3>Author <span> - Song Name</span></h3>
+            </a>
+            <span class="material-icons">album</span>
+            <ins>Duration</ins>
+            <br>
+            <span class="material-icons">equalizer</span>
+            <ins>Tempo</ins>
+            <br>
+            <span class="material-icons">today</span>
+            <ins>Year</ins>
+        </div>
+        <div class="music">
+            <a href="#">
+                <div class="image"
+                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"></div>
+                <h3>Author <span> - Song Name</span></h3>
+            </a>
+            <span class="material-icons">album</span>
+            <ins>Duration</ins>
+            <br>
+            <span class="material-icons">equalizer</span>
+            <ins>Tempo</ins>
+            <br>
+            <span class="material-icons">today</span>
+            <ins>Year</ins>
+        </div>
+        <div class="music">
+            <a href="#">
+                <div class="image"
+                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"></div>
+                <h3>Author <span> - Song Name</span></h3>
+            </a>
+            <span class="material-icons">album</span>
+            <ins>Duration</ins>
+            <br>
+            <span class="material-icons">equalizer</span>
+            <ins>Tempo</ins>
+            <br>
+            <span class="material-icons">today</span>
+            <ins>Year</ins>
+        </div>
+    </div>
+</div>
+</body>
+</html>

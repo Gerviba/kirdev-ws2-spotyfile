@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotyfile</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://i.icomoon.io">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Spoty<span>file</span></h1>
+        <div class="details" th:object="${track}">
+            <div class="side cover" th:style="|background-image: url('${track.cover}')|">
+            </div>
+            <div class="side info">
+                <h3 th:text="*{name}">Name Of Track</h3>
+                <table>
+                    <tr>
+                        <td>Artist(s)</td>
+                        <td th:text="*{artists}">Mamie Smith</td>
+                    </tr>
+                    <tr>
+                        <td>Duration (s)</td>
+                        <td th:text="*{duration}">168333</td>
+                    </tr>
+                    <tr>
+                        <td>Tempo</td>
+                        <td th:text="*{liveness}">149.976</td>
+                    </tr>
+                    <tr>
+                        <td>Key</td>
+                        <td th:text="*{key}">5</td>
+                    </tr>
+                    <tr>
+                        <td>Popularity</td>
+                        <td th:text="*{popularity}">12</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td th:text="*{year}">1920</td>
+                    </tr>
+                    <tr>
+                        <td>Loudness</td>
+                        <td th:text="*{loudness}">-12.628</td>
+                    </tr>
+                    <tr>
+                        <td>Liveness</td>
+                        <td th:text="*{liveness}">0.379</td>
+                    </tr>
+                    <tr>
+                        <td>Valence</td>
+                        <td th:text="*{valence}">0.634</td>
+                    </tr>
+                    <tr>
+                        <td>Instrumentalness</td>
+                        <td th:text="*{instrumentalness}">0.000522</td>
+                    </tr>
+                    <tr>
+                        <td>Danceability</td>
+                        <td th:text="*{danceability}">0.598</td>
+                    </tr>
+                    <tr>
+                        <td>Speechiness</td>
+                        <td th:text="*{speechiness}">0.0936</td>
+                    </tr>
+                    <tr>
+                        <td>Acousticness</td>
+                        <td th:text="*{acousticness}">0.991</td>
+                    </tr>
+                    <tr>
+                        <td>Energy</td>
+                        <td th:text="*{energy}">0.22399999999999998</td>
+                    </tr>
+                    <tr>
+                        <td>Mode</td>
+                        <td th:text="*{mode}">0</td>
+                    </tr>
+                    <tr>
+                        <td>Explicit</td>
+                        <td th:text="*{explicit}">0</td>
+                    </tr>
+                    <tr>
+                        <td>Release Date</td>
+                        <td th:text="*{releaseDate}">1920</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: 0;
+}
+
+input:focus {
+    outline: 0;
+}
+
+input {
+    appearance: none;
+}
+
+body {
+    width: 100%;
+    background: #292F36;
+    color: #DEDEDE;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ins, a {
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 72px;
+    text-align: center;
+}
+
+h1 span {
+    color: #FF6B6B;
+}
+
+h6 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.container {
+    max-width: 930px;
+    margin: 40px auto;
+}
+
+.search {
+    border-bottom: 4px solid #DEDEDE;
+    padding: 30px 40px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.search h2 {
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.search input[type="text"] {
+    background: #292F36;
+    border: 2px solid #DEDEDE;
+    padding: 8px 16px;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #DEDEDE;
+    text-transform: uppercase;
+}
+
+.search input[type="text"]:focus {
+    color: #FF6B6B;
+    border: 2px solid #FF6B6B;
+}
+
+.search input[type="submit"] {
+    background-color: #292F36;
+    border: 2px solid #FF6B6B;
+    padding: 8px 16px;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #FF6B6B;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.search input[type="submit"]:hover {
+    color: #292F36;
+    background-color: #FF6B6B;
+}
+
+.search form {
+    margin-bottom: 20px;
+}
+
+.search a {
+    color: #FF6B6B;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 2px 12px;
+    border-bottom: 2px solid #292F36;
+}
+
+.search a:hover {
+    border-bottom: 2px solid #FF6B6B;
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center
+}
+
+.music {
+    flex: 0 0 auto;
+    margin: 20px;
+    border-bottom: 4px solid #000000;
+    background-color: #191c1f;
+    max-width: 240px;
+    width: 240px;
+    vertical-align: middle;
+    padding-bottom: 16px;
+}
+
+.music .image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.music a {
+    color: #8A8A8A;
+}
+
+.music h3 {
+    font-weight: 300;
+    padding: 8px 8px;
+    color: #A3A3A3;
+}
+
+.music h3 span {
+    color: #DEDEDE;
+}
+
+.music h3 b {
+    font-weight: 300;
+}
+
+.music span.material-icons {
+    position: relative;
+    top: 6px;
+    margin-left: 12px;
+    margin-right: 4px;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: space-between;
+    margin-top: 20px;
+}
+
+.side {
+    width: 40%;
+    flex: 1 0 auto;
+    margin: 10px;
+}
+
+.cover {
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+table td {
+    padding: 2px 12px;
+}
+
+table td:nth-of-type(2) {
+    color: #FFFFFF;
+}
