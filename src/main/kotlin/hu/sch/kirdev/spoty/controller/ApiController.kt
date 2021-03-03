@@ -16,7 +16,7 @@ class ApiController {
 
     @GetMapping("/top10")
     fun fetchTop10(): List<MusicEntity> {
-        return musicService.getRandom10()
+        return listOf() // TODO: fetch 10 random item
     }
 
 }

@@ -16,17 +16,17 @@ open class MusicService {
 
     @Transactional(readOnly = true)
     fun getRandom10(): List<MusicEntity> {
-        return repo.findAll().take(10)
+        return repo.findAll().take(10) // TODO: Solve it better
     }
 
     @Transactional(readOnly = true)
     fun getTrack(id: Long): MusicEntity {
-        return repo.findById(id).orElseThrow { RuntimeException("No track was found with id: $id") }
+        throw RuntimeException("No track was found with id: $id") // TODO: Query from db
     }
 
     @Transactional(readOnly = true)
     fun getTrackOrNull(id: Long): MusicEntity? {
-        return repo.findById(id).orElse(null)
+        return null // TODO: Query from db
     }
 
     // NOTE: Not readonly
