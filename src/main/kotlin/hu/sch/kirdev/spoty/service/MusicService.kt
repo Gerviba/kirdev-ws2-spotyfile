@@ -6,6 +6,7 @@ import hu.sch.kirdev.spoty.repository.MusicRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import java.util.*
 
 // NOTE: Open class to support transaction proxy generation
 @Service
@@ -14,6 +15,26 @@ open class MusicService {
     @Autowired
     private lateinit var repo: MusicRepository
 
+    fun getAll(): List<MusicEntity> {
+        return repo.findAll().toList()
+    }
+
+    fun search(query: String): List<MusicEntity> {
+        return repo.findAllByNameContainingIgnoreCaseOrArtistsContainingIgnoreCase(query, query)
+    }
+
+    fun searchNewest(): List<MusicEntity> {
+        return repo.findAllByOrderByYear()
+    }
+
+    fun searchPopular(): List<MusicEntity> {
+        return repo.findAllByOrderByPopularityDesc()
+    }
+
+    fun searchUnique(): List<MusicEntity> {
+        return repo.findAllByOrderByTempoDesc()
+    }
+
     @Transactional(readOnly = true)
     fun getRandom10(): List<MusicEntity> {
         return repo.findAll().take(10) // TODO: Solve it better
@@ -21,12 +42,12 @@ open class MusicService {
 
     @Transactional(readOnly = true)
     fun getTrack(id: Long): MusicEntity {
-        throw RuntimeException("No track was found with id: $id") // TODO: Query from db
+        return repo.findById(id).orElseThrow { RuntimeException("No track was found with id: $id") }
     }
 
     @Transactional(readOnly = true)
     fun getTrackOrNull(id: Long): MusicEntity? {
-        return null // TODO: Query from db
+        return repo.findById(id).orElse(null)
     }
 
     // NOTE: Not readonly
@@ -68,7 +89,7 @@ open class MusicService {
         )
 
         repo.save(entity)
-        println("Track $trackDto.id loaded")
+        println("Track ${trackDto.id} loaded")
     }
 
 }

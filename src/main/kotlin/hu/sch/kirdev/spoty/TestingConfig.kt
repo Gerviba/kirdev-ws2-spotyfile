@@ -22,8 +22,8 @@ class TestingConfig {
     fun init() {
 
         val typeRef: TypeReference<List<TrackListDto>> = object : TypeReference<List<TrackListDto>>() {}
-        val jsonInput = Files.readAllLines(Path.of("parsed_y2021.json")).joinToString("")
-        val allTracks = mapper.readValue(jsonInput, typeRef).take(100)
+        val jsonInput = Files.readAllLines(Path.of("parsed_pop.json")).joinToString("")
+        val allTracks = mapper.readValue(jsonInput, typeRef)
 
         for (track in allTracks)
             musicService.addTrack(track)

@@ -1,5 +1,6 @@
 package hu.sch.kirdev.spoty.model
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
 
 @Entity
@@ -26,7 +27,7 @@ data class MusicEntity(
     var acousticness: Float = 0.0f,
     var popularity: Int = 0,
     @Column(name = "`name`") var name: String = "",
-    var trackId: String = "",
+    @JsonIgnore var trackId: String = "",
     @Column(name = "`key`") var key: Int = 0,
     var energy: Float = 0.0f,
     var cover: String = ""

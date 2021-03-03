@@ -13,32 +13,33 @@
 <body>
 <div class="container">
     <h1>Spoty<span>file</span></h1>
-    <h6>Motd</h6>
+    <h6 th:text="${motd}">Motd</h6>
     <div class="search">
         <form action="#" method="get">
-            <input type="text" name="query" autocomplete="off"/>
+            <input type="text" name="query" autocomplete="off" th:value="${query}"/>
             <input type="submit" value="Keresés"/>
         </form>
-        <a href="#">Legújabbak</a>
-        <a href="#">Legkedveltebbek</a>
-        <a href="#">Egyéb</a>
+        <a href="?prepared=1">Legújabbak</a>
+        <a href="?prepared=2">Legkedveltebbek</a>
+        <a href="?prepared=3">Egyéb</a>
     </div>
 
-    <div class="results">
-        <div class="music">
-            <a href="#">
+    <div class="results" th:remove="all-but-first">
+        <div class="music" th:each="track : ${results}">
+            <a href="#" th:href="|track/${track.id}|">
                 <div class="image"
-                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"></div>
-                <h3>Author <span> - Song Name</span></h3>
+                     style="background-image: url('https://songdewnetwork.com/sgmedia/assets/images/default-album-art.png')"
+                     th:style="|background-image: url('${track.cover}')|"></div>
+                <h3><b th:text="${track.artists}">Author</b> <span th:text="${track.name}"> - Song Name</span></h3>
             </a>
             <span class="material-icons">album</span>
-            <ins>Duration</ins>
+            <ins th:text="|Popularity: ${track.popularity}|">Duration</ins>
             <br>
             <span class="material-icons">equalizer</span>
-            <ins>Tempo</ins>
+            <ins th:text="|${track.tempo}bpm|">Tempo</ins>
             <br>
             <span class="material-icons">today</span>
-            <ins>Year</ins>
+            <ins th:text="${track.year}">Year</ins>
         </div>
         <div class="music">
             <a href="#">

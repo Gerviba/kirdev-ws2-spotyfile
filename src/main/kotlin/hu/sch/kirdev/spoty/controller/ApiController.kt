@@ -19,4 +19,9 @@ class ApiController {
         return listOf() // TODO: fetch 10 random item
     }
 
+    @GetMapping("/all")
+    fun fetchAll(): List<MusicEntity> {
+        return musicService.getAll()
+    }
+
 }
